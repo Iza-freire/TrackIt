@@ -1,0 +1,1 @@
+export const UrlComum = 'https://mock-api.driven.com.br/api/v2/trackit';
