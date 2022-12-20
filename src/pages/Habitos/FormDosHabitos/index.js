@@ -48,8 +48,8 @@ function FormDosHabitos({ isOpen, closeForm, CarregarHabitos }) {
   }
 
   return (
-    <C.Form  data-test="habit-create-container" onSubmit={handleCreateHabit} isOpen={isOpen}>
-      <C.Container>
+    <C.Form onSubmit={handleCreateHabit} isOpen={isOpen}>
+      <C.Container >
         <C.Input
           data-test="habit-name-input"
           placeholder="nome do hábito"

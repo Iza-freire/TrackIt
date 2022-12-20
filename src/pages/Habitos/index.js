@@ -63,11 +63,12 @@ export default function Habitos() {
         </C.Button>
       </C.RegisterContent>
       <FormDosHabitos
+        data-test="habit-create-container"
         isOpen={formHabitosAberto}
         closeForm={() => setFormHabitosAberto(false)}
         CarregarHabitos={CarregarHabitos}
       />
-      <ListaDeHabitos habits={habits} handleDeleteHabit={handleDeleteHabit} />
+      <ListaDeHabitos data-test="habit-container"  habits={habits} handleDeleteHabit={handleDeleteHabit} />
     </C.Container>
   );
 }

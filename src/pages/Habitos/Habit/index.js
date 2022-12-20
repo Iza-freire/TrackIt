@@ -6,7 +6,7 @@ import { Days, LinkS } from '../style';
 
 function Habit({ id, name, days, handleDeleteHabit }) {
   return (
-    <Container  data-test="habit-container">
+    <Container>
       <Title data-test="habit-name">{name}</Title>
       <Days  data-test="habit-day" >
         {Semana.map(weekDay => (

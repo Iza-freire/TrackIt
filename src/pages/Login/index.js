@@ -81,7 +81,7 @@ const Login = () => {
           }
         </Button>
       </C.Content>
-          <C.LabelSignup>
+          <C.LabelSignup data-test="signup-link">
            Não tem uma conta? 
           <Link data-test="signup-link" to="/cadastro">&nbsp;Cadastre</Link>
         </C.LabelSignup>
