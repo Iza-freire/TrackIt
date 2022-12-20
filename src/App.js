@@ -18,7 +18,7 @@ const App = () => {
       <ProgressProvider>
         <BrowserRouter>
         <GlobalStyle/>
-          <Topo />
+          <Topo data-test="header"/>
           <Routes>
             <Route path="/" element={ <Login/> } />
             <Route path="/cadastro" element={<Cadastro/>} />
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/hoje" element={<Hoje/>} />
             <Route path="/historico" element={ <Historico/> } />
           </Routes>
-          <Menu />
+          <Menu data-test="menu"/>
         </BrowserRouter>
       </ProgressProvider>
     </AuthProvider>
