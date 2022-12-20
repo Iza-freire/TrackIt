@@ -6,7 +6,7 @@ function StatusHabito({ doneHabitsQuantity }) {
   const { progress } = useProgress();
 
   return (
-    <HabitoParagrafo doneHabitsQuantity={doneHabitsQuantity}>
+    <HabitoParagrafo data-test="today-counter"  doneHabitsQuantity={doneHabitsQuantity}>
       {
         doneHabitsQuantity === 0
           ? "Nenhum hábito concluído ainda"

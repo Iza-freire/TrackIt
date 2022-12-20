@@ -16,7 +16,7 @@ export default function Topo(){
   }
 
     return (
-    <ContainerTopo>
+    <ContainerTopo data-test="header">
       <img src={logo} alt="TrackIt" onClick={() => navigate("/hoje")} />
       <ImagemUser src={auth.image} alt={auth.name} />
     </ContainerTopo>

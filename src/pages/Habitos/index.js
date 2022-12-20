@@ -58,7 +58,7 @@ export default function Habitos() {
     <C.Container>
       <C.RegisterContent>
         <C.Title>Meus hábitos</C.Title>
-        <C.Button onClick={() => setFormHabitosAberto(true)}>
+        <C.Button data-test="habit-create-btn" onClick={() => setFormHabitosAberto(true)}>
           <img alt="plus.svg" src={Plus} />
         </C.Button>
       </C.RegisterContent>

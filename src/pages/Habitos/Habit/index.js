@@ -6,15 +6,15 @@ import { Days, LinkS } from '../style';
 
 function Habit({ id, name, days, handleDeleteHabit }) {
   return (
-    <Container>
-      <Title>{name}</Title>
-      <Days>
+    <Container  data-test="habit-container">
+      <Title data-test="habit-name">{name}</Title>
+      <Days  data-test="habit-day" >
         {Semana.map(weekDay => (
           <LinkS key={weekDay.id} isSelected={days.includes(weekDay.id)}>{weekDay.day}</LinkS>
         ))}
       </Days>
 
-      <img alt="Trash" src={trashIcon} onClick={() => handleDeleteHabit(id)} />
+      <img data-test="habit-delete-btn" alt="Trash" src={trashIcon} onClick={() => handleDeleteHabit(id)} />
     </Container>
   );
 }

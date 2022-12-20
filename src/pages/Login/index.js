@@ -54,6 +54,7 @@ const Login = () => {
       <img alt="logo.svg" src={Logo}/>
       <C.Content onSubmit={handleSubmit}>
         <Input
+          data-test="email-input"
           type="email"
           placeholder="Digite seu E-mail"
           name="email"
@@ -63,6 +64,7 @@ const Login = () => {
           required
         />
         <Input
+          data-test="password-input"
           type="password"
           placeholder="Digite sua Senha"
           value={infoUser.password}
@@ -71,7 +73,7 @@ const Login = () => {
           disabled={carregandoInfo}
           required
         />
-        <Button type="submit" disabled={carregandoInfo}>
+        <Button data-test="login-btn" type="submit" disabled={carregandoInfo}>
           {
             carregandoInfo
               ? <Loading/>
@@ -81,7 +83,7 @@ const Login = () => {
       </C.Content>
           <C.LabelSignup>
            Não tem uma conta? 
-          <Link to="/cadastro">&nbsp;Cadastre</Link>
+          <Link data-test="signup-link" to="/cadastro">&nbsp;Cadastre</Link>
         </C.LabelSignup>
     
     </C.Container>

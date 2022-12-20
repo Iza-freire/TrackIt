@@ -14,11 +14,11 @@ export default function Menu() {
     return null
   }
   return (
-    <ContainerRodape>
-      <LinkS to="/habitos">Hábitos</LinkS>
+    <ContainerRodape  data-test="menu">
+      <LinkS data-test="habit-link" to="/habitos">Hábitos</LinkS>
        <Progressbar>
         <DivCircularContainer>
-          <Link to="/hoje">
+          <Link data-test="today-link" to="/hoje">
             <CircularProgressbar
              value={progress}
               text={"Hoje"}
@@ -35,7 +35,7 @@ export default function Menu() {
         </DivCircularContainer>
       </Progressbar>
 
-      <LinkS to="/historico">Histórico</LinkS>
+      <LinkS  data-test="history-link" to="/historico">Histórico</LinkS>
     </ContainerRodape>
   )
 }

@@ -37,10 +37,9 @@ export default function Hoje() {
     <Container>
       <Content>
         <Data/>
-
-        <StatusHabito doneHabitsQuantity={doneHabitsQuantity} />
+        <StatusHabito data-test="today-habit-container"  doneHabitsQuantity={doneHabitsQuantity} />
         {habits.map(habit => (
-          <CardHabit
+          <CardHabit 
             key={habit.id}
             {...habit}
             loadhabitosDeHoje={loadhabitosDeHoje}

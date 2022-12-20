@@ -9,7 +9,7 @@ export default function Data() {
   let DataCorreta = dayjs(now).locale(ptBr).format('dddd');
 
   return (
-    <ContainerData>{DataCorreta}, {date}/{month}</ContainerData>
+    <ContainerData data-test="today" >{DataCorreta}, {date}/{month}</ContainerData>
   )
 }
 

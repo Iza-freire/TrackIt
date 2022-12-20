@@ -34,28 +34,29 @@ const CardHabit = ({
   }
 
   return (
-    <C.Container>
-      <C.ContainerCard>
+    <C.Container data-test="today-habit-container" >
+      <C.ContainerCard data-test="today-habit-name">
         <h2>{name}</h2>
-        <C.Paragraph>
+        <C.Paragraph data-test="today-habit-sequence" >
           Sequência atual:
-          <C.CurrentSequence done={done}>
+          <C.CurrentSequence done={done} data-test="today-habit-sequence" >
             {currentSequence} {formatDayText(currentSequence)}
           </C.CurrentSequence>
         </C.Paragraph>
-        <C.Paragraph>
+        <C.Paragraph data-test="today-habit-sequence" >
           Seu recorde:
-          <C.HighestSequence currentSequenceIsHighest={currentSequenceIsHighest}>
+          <C.HighestSequence data-test="today-habit-sequence"  currentSequenceIsHighest={currentSequenceIsHighest}>
             {highestSequence} {formatDayText(highestSequence)}
           </C.HighestSequence>
         </C.Paragraph>
       </C.ContainerCard>
 
       <C.CheckMarkContainer
+        data-test="today-habit-check-btn"
         done={done}
         onClick={handleCheckHabit}
       >
-        <img alt="check.svg" src={Check} />
+        <img data-test="today-habit-check-btn" alt="check.svg" src={Check} />
       </C.CheckMarkContainer>
     </C.Container>
   );

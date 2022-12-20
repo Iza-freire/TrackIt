@@ -42,6 +42,7 @@ console.log(infoUser)
       <img alt="logo.svg" src={Logo} />
       <C.Content onSubmit={handleSubmit}>
         <Input
+           data-test="email-input"
           type="email"
           placeholder="email"
           name="email"
@@ -51,6 +52,7 @@ console.log(infoUser)
           required
         />
         <Input
+          data-test="password-input"
           type="password"
           placeholder="senha"
           value={infoUser.password}
@@ -60,6 +62,7 @@ console.log(infoUser)
           required
         />
         <Input
+          data-test="user-name-input"
           type="text"
           placeholder="nome"
           name="name"
@@ -70,6 +73,7 @@ console.log(infoUser)
         />
         <Input
          required
+         data-test="user-image-input"
           type="text"
           placeholder="foto"
           name="image"
@@ -78,7 +82,7 @@ console.log(infoUser)
           disabled={carregandoInfo}
          
         />
-        <Button type="submit" disabled={carregandoInfo}>
+        <Button data-test="signup-btn" type="submit" disabled={carregandoInfo}>
           {
             carregandoInfo
               ? <Loading/>
@@ -88,7 +92,7 @@ console.log(infoUser)
       </C.Content>
           <C.LabelSignin>
           Já tem uma conta?
-          <Link to="/">&nbsp;Entre</Link>
+          <Link data-test="login-link"  to="/">&nbsp;Entre</Link>
         </C.LabelSignin>
     </C.Container>
   );

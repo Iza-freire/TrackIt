@@ -48,9 +48,10 @@ function FormDosHabitos({ isOpen, closeForm, CarregarHabitos }) {
   }
 
   return (
-    <C.Form onSubmit={handleCreateHabit} isOpen={isOpen}>
+    <C.Form  data-test="habit-create-container" onSubmit={handleCreateHabit} isOpen={isOpen}>
       <C.Container>
         <C.Input
+          data-test="habit-name-input"
           placeholder="nome do hábito"
           required
           onChange={(e) => setName(e.target.value)}
@@ -60,6 +61,7 @@ function FormDosHabitos({ isOpen, closeForm, CarregarHabitos }) {
         <C.Days disabled={carregandoInfo}>
           {Semana.map((weekDay) => (
             <Day
+            data-test="habit-day"
               key={weekDay.id}
               {...weekDay}
               isSelected={days.includes(weekDay.id)}
@@ -71,13 +73,14 @@ function FormDosHabitos({ isOpen, closeForm, CarregarHabitos }) {
 
       <C.Footer>
         <C.CloseButton
+          data-test="habit-create-cancel-btn"
           type="button"
           disabled={carregandoInfo}
           onClick={closeForm}
         >
           Cancelar
         </C.CloseButton>
-        <C.SaveButton type="submit" disabled={carregandoInfo}>
+        <C.SaveButton data-test="habit-create-save-btn" type="submit" disabled={carregandoInfo}>
           {
             carregandoInfo
               ? <Loading/>
@@ -92,6 +95,7 @@ function FormDosHabitos({ isOpen, closeForm, CarregarHabitos }) {
 function Day({ day, id, isSelected, handleSelectDay }) {
   return (
     <C.LinkS
+      data-test="habit-day"
       onClick={() => handleSelectDay(id)}
       isSelected={isSelected}
     >
