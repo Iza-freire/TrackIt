@@ -9,6 +9,8 @@ function Loading(){
         </DivCarregando>
         </ContaiverL>
     )
+    
+
 }
 export default Loading
 
@@ -18,7 +20,7 @@ const DivCarregando = styled.div`
     justify-content: center;
     align-items: center;
     img {
-        width: 40px;
+        width: 30px;
     }
 `
 const ContaiverL = styled.div`

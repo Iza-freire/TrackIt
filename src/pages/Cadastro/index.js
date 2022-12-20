@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import * as C from "./styled";
+import Logo from "../../assets/img/logo.svg";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import * as C from "./styles";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../img/logo.svg";
-import Loading from "../../Loading/Loading"
+import Loading from "../../assets/Loading/Loading";
 import api from "../../API'S/api";
 
 
-const Signup = () => {
+const Cadastro = () => {
   
   const [infoUser, setInfoUser] = useState({ name: "", email: "", password: "", image: "" });
   const [carregandoInfo, setCarregandoInfo] = useState(false);
@@ -22,7 +22,7 @@ const Signup = () => {
     evento.preventDefault();
 
     setCarregandoInfo(true);
-    const promise = api.signUp({
+    const promise = api.ApisignUp({
       ...infoUser
     });
 
@@ -81,7 +81,7 @@ console.log(infoUser)
         <Button type="submit" disabled={carregandoInfo}>
           {
             carregandoInfo
-              ? <Loading />
+              ? <Loading/>
               : "Cadastrar"
           }
         </Button>
@@ -93,4 +93,5 @@ console.log(infoUser)
     </C.Container>
   );
 }
-export default Signup
+
+export default Cadastro;

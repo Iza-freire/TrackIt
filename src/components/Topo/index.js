@@ -1,25 +1,31 @@
-import logo2 from "../../img/logo2.png"
+import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../../assets/img/logo2.svg";
 import useAuth from "../../hooks/useAuth";
+import { RemoverTopoEMeanu } from "../../App";
 import styled from "styled-components";
 
 
-
-
-export default function Cabecalho(){
+export default function Topo(){
     
-    const { auth } = useAuth();
+  const navigate = useNavigate();
+  const { auth } = useAuth();
+  const location = useLocation();
+
+  if (RemoverTopoEMeanu.includes(location.pathname)) {
+    return null;
+  }
 
     return (
-    <Container>
-      <img src={logo2} alt="TrackIt" />
+    <ContainerTopo>
+      <img src={logo} alt="TrackIt" onClick={() => navigate("/hoje")} />
       <ImagemUser src={auth.image} alt={auth.name} />
-    </Container>
+    </ContainerTopo>
   );
     
 }
 
 
-const Container = styled.div`
+const ContainerTopo = styled.div`
     position: fixed;
     width: 100%;
     height: 70px;
@@ -38,7 +44,6 @@ const Container = styled.div`
 
 `
 const ImagemUser = styled.img`
-  margin-right: 25px;
   width: 50px;
   height: 50px;
   border-radius: 50%;

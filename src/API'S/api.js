@@ -6,27 +6,20 @@ function createConfig(token) {
   return { headers: { Authorization: `Bearer ${token}` } };
 }
 
-function login(body) {
+function ApiLogin(body) {
   const promise = axios.post(`${UrlComum}/auth/login`, body);
 
   return promise;
 }
 
-function signUp(body) {
+function ApisignUp(body) {
   const promise = axios.post(`${UrlComum}/auth/sign-up`, body);
 
   return promise;
 }
 
-function getDailyHistory(token) {
-  const config = createConfig(token);
 
-  const promise = axios.get(`${UrlComum}/habits/history/daily`, config);
-
-  return promise;
-}
-
-function getHabits(token) {
+function ApiHabitos(token) {
   const config = createConfig(token);
 
   const promise = axios.get(`${UrlComum}/habits`, config);
@@ -74,11 +67,19 @@ function uncheckHabit(id, token) {
   return promise;
 }
 
+function HabitosDeHoje(token) {
+  const config = createConfig(token);
+
+  const promise = axios.get(`${UrlComum}/habits/today`, config);
+
+  return promise;
+}
+
 const api = {
-  login,
-  signUp,
-  getDailyHistory,
-  getHabits,
+  HabitosDeHoje,
+  ApiLogin,
+  ApisignUp,
+  ApiHabitos,
   createHabit,
   deleteHabit,
   gethojeHabits,

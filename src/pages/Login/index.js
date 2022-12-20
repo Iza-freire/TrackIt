@@ -1,13 +1,13 @@
-
-import React, { useEffect, useState } from "react";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import * as C from "./styles";
-import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../img/logo.svg";
-import Loading from "../../Loading/Loading"
+import { useState, useEffect } from "react";
+import Logo from "../../assets/img/logo.svg";
+import useAuth from "../../hooks/useAuth";
+import * as C from "./styles";
+import Loading from "../../assets/Loading/Loading";
 import api from "../../API'S/api";
+import Button from "../../components/Button";
+import  Input  from "../../components/Input";
+
 
 
 
@@ -22,7 +22,7 @@ const Login = () => {
     if (auth && auth.token) {
       navigate("/hoje");
     }
-  }, []);
+  }, [auth, navigate]);
 
     const handleChange = (evento) => {
     setInfoUser({ ...infoUser, [evento.target.name]: evento.target.value });
@@ -32,7 +32,7 @@ const Login = () => {
     evento.preventDefault();
 
     setCarregandoInfo(true);
-    const promise = api.login({
+    const promise = api.ApiLogin({
       ...infoUser
     });
 
@@ -74,14 +74,14 @@ const Login = () => {
         <Button type="submit" disabled={carregandoInfo}>
           {
             carregandoInfo
-              ? <Loading />
+              ? <Loading/>
               : "Entrar"
           }
         </Button>
       </C.Content>
           <C.LabelSignup>
            Não tem uma conta? 
-          <Link to="/signup">&nbsp;Cadastre</Link>
+          <Link to="/cadastro">&nbsp;Cadastre</Link>
         </C.LabelSignup>
     
     </C.Container>
