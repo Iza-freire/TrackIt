@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# TrackIt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma aplicação de acompanhamento de hábitos, desenvolvida em React. Nele é possível se cadastrar e fazer login para ter acesso às funcionalidades, tais como cadastro de hábitos, acompanhamento de hábitos realizados e histórico.
 
-## Available Scripts
+## Como executar:
 
-In the project directory, you can run:
+### 1. Faça um clone desse repositório na sua máquina:
+- Crie uma pasta no seu computador para esse programa, recomendo colocar o nome Assistente Pessoal
+- Abra o `git bash` ou `terminal` dentro dessa pasta
+- Copie a URL do repositório
+- Digite git clone <URL copiada> e pressione enter
 
-### `npm start`
+### 2. Instale as dependências:
+`npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Inicie a aplicação:
+`npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. Abra a aplicação em seu navegador [http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+## Funcionalidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tela de Login
+Na tela de login, é possível fazer login com um email e senha previamente cadastrados. Em caso de sucesso, o usuário é redirecionado para a rota /hoje. Em caso de falha, é exibido um alerta informando o erro.
 
-### `npm run build`
+### Tela de Cadastro
+Na tela de cadastro, é possível se cadastrar informando um nome, email e senha. Em caso de sucesso, o usuário é redirecionado para a tela de login. Em caso de falha, é exibido um alerta informando o erro.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Topo e Menu
+O topo e menu são fixos e exibidos em todas as telas da aplicação. No topo, é exibida a foto do usuário logado. No menu, há botões para acessar as rotas de Hábitos, Hoje e Histórico. O botão Hoje exibe uma barra de progresso circular indicando a porcentagem de conclusão dos hábitos de hoje.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tela de Hábitos
+Na tela de hábitos, são exibidos os hábitos do usuário. É possível deletar um hábito clicando em um botão e confirmando a ação. É possível cadastrar um novo hábito clicando no botão "+". O usuário deve inserir o nome do hábito e selecionar os dias da semana que deseja realizar o hábito. É possível cadastrar hábitos para qualquer dia da semana. Os hábitos são atualizados automaticamente conforme o usuário for concluindo-os. Quando não há hábitos cadastrados, é exibido um texto informativo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tecnologias utilizadas
+- React
+- Styled Components
+- Context API
+- React Loader Spinner
+- React Router DOM
+- Axios
